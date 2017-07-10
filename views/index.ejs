@@ -1,0 +1,25 @@
+<% include partials/header %>
+	<h1>Faça seu cadastro</h1>
+
+	<% if (errors != undefined){ %>
+		<ul>
+			<% errors.forEach(function(error){ %>
+				<li>
+					<%= error.msg %>
+				</li>
+			<% }); %>
+		</ul>
+	<% }; %>
+
+	<form method="POST" action="/users/add">
+	  Name:<br>
+	  <input type="text" name="name" value="">
+	  <br>
+	  Your email:<br>
+	  <input type="email" name="email" value="">
+	  <br><br>
+	  <input type="submit" value="Enviar">
+	</form> 
+
+
+<% include partials/footer %>

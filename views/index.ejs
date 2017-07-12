@@ -1,11 +1,11 @@
 <% include partials/header %>
 	<h1>Faça seu cadastro</h1>
 
-	<% if (errors != undefined){ %>
+	<% if (erros != undefined){ %>
 		<ul>
-			<% errors.forEach(function(error){ %>
+			<% erros.forEach(function(e){ %>
 				<li>
-					<%= error.msg %>
+					<%= e.msg %>
 				</li>
 			<% }); %>
 		</ul>
@@ -20,6 +20,15 @@
 	  <br><br>
 	  <input type="submit" value="Enviar">
 	</form> 
+
+	<h1>Usuários cadastrados</h1>
+	<ul>
+		<% usuarios.forEach(function(u){ %>
+			<li>
+				<%= u.name %> <a href="#" class="deleteUser" data-id="<%= u._id %>">  Delete</a>
+			</li>
+		<% }); %>
+	</ul>
 
 
 <% include partials/footer %>
